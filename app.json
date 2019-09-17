@@ -1,5 +1,6 @@
 {
   "pages": [
+    "example/myapp",
     "example/index",
     "example/button/button",
     "example/list/list",
@@ -35,7 +36,7 @@
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "WeUI for 小程序",
+    "navigationBarTitleText": "英特家的账簿",
     "navigationBarBackgroundColor": "#EDEDED",
     "backgroundColor": "#EDEDED"
   },

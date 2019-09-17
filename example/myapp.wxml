@@ -1,0 +1,85 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示</view>
+    <view class="page__hd">
+        <view class="page__title">这是一个账簿</view>
+        <view class="page__desc">是的，没错！</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-cells__title">买的是什么?</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="输入要败的东东" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">要花多少钱?</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell ">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="输入要败的RMB" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">买了用多久?</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__bd weui-cell__bd_in-select-before">
+                    <input class="weui-input" placeholder="请输入时长（不用带单位）" />
+                </view>
+                <view class="weui-cell__hd" style="width: 105px">
+                    <picker bindchange="bindTimeType" value="{{timeTypeIndex}}" range="{{timeTypes}}">
+                        <view class="weui-select">{{timeTypes[timeTypeIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">怎么买便宜? (可多选叠加)</view>
+        <view class="weui-cells weui-cells_checkbox weui-cells_after-title">
+            <checkbox-group bindchange="checkboxChange">
+                <label class="weui-cell weui-check__label" wx:for="{{checkboxItems}}" wx:key="value">
+                    <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}" />
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                        <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+                        <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{item.checked}}"></icon>
+                    </view>
+                    <view class="weui-cell__bd">{{item.name}}</view>
+                </label>
+            </checkbox-group>
+        </view>
+        <view class="weui-cells__title">为什么要买？</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" placeholder="这需要一个很充分的理由" maxlength="{{maxlen}}" bindinput="inputCount" style="height: 3.3em" />
+                    <view class="weui-textarea-counter">{{curlen}}/{{maxlen}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">是什么支出?</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindSpendingType" value="{{spendingTypeIndex}}}" range="{{spendingTypes}}">
+                        <view class="weui-select">{{spendingTypes[spendingTypeIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells__title">可以不买嘛?</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindBuyOrNot" value="{{buyOrNotIndex}}}" range="{{buyOrNot}}">
+                        <view class="weui-select">{{buyOrNot[buyOrNotIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="showTopTips">给英特爸审批</button>
+        </view>
+    </view>
+</view>
