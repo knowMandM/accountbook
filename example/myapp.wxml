@@ -79,7 +79,7 @@
         </view>
         
         <view class="weui-btn-area">
-            <button class="weui-btn" type="primary" bindtap="showTopTips">给英特爸审批</button>
+            <button class="weui-btn" type="primary" open-type="share" bindtap="showTopTips">给英特爸审批</button>
         </view>
     </view>
 </view>
