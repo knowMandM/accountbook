@@ -1,7 +1,7 @@
 <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
     <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示</view>
     <view class="page__hd">
-        <view class="page__title">这是一个账簿</view>
+        <view class="page__title">这是英特家账簿</view>
         <view class="page__desc">是的，没错！</view>
     </view>
     <view class="page__bd">
@@ -25,7 +25,7 @@
         <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell weui-cell_select">
                 <view class="weui-cell__bd weui-cell__bd_in-select-before">
-                    <input class="weui-input" placeholder="请输入时长（不用带单位）" />
+                    <input class="weui-input" placeholder="输入使用时长" />
                 </view>
                 <view class="weui-cell__hd" style="width: 105px">
                     <picker bindchange="bindTimeType" value="{{timeTypeIndex}}" range="{{timeTypes}}">
@@ -51,7 +51,7 @@
         <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell">
                 <view class="weui-cell__bd">
-                    <textarea class="weui-textarea" placeholder="这需要一个很充分的理由" maxlength="{{maxlen}}" bindinput="inputCount" style="height: 3.3em" />
+                    <textarea class="weui-textarea" placeholder="这里需要填一个很充分的理由" maxlength="{{maxlen}}" bindinput="inputCount" style="height: 3.3em" />
                     <view class="weui-textarea-counter">{{curlen}}/{{maxlen}}</view>
                 </view>
             </view>
