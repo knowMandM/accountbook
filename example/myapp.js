@@ -33,11 +33,18 @@ Page({
         buyOrNot: ["阔以", "不阔以"],
         buyOrNotIndex: 0,
 
-        maxlen:200,
+        maxlen:1000,
         curlen:0,
 
         isAgree: false
     },
+
+    onShow: function() {
+        console.log("myapp onShow")
+        var app = getApp()
+        console.log(app.globalData.query)
+    },
+
     showTopTips: function(){
         console.log("showTopTips")
         var that = this;
@@ -50,6 +57,18 @@ Page({
             });
         }, 3000);
     },
+
+    
+
+    onShareAppMessage: function (){
+        console.log("onShareAppMessage")
+        var obj = {
+            title: '自定义转发标题',
+            path: '/example/index?id=123'
+        }
+        return obj
+    },
+
     radioChange: function (e) {
         console.log('radio发生change事件，携带value值为：', e.detail.value);
 
